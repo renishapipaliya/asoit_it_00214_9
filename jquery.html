@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+
+
+
+
+
+        <title>Document</title>
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#BtnShow").attr("disabled", true);
+
+            $("#BtnHide").click(function () {
+                if (confirm("Are you sure..??")) {
+                    $("#MyDiv").hide(5000);
+                    $(this).attr("disabled", true);
+                    $("#BtnShow").attr("disabled", false);
+                    $("#BtnToggle").text("Show");
+                }
+            });
+
+            $("#BtnShow").click(function () {
+                if (confirm("Are you sure..??")) {
+                    $("#MyDiv").show(5000);
+                    $(this).attr("disabled", true);
+                    $("#BtnHide").attr("disabled", false);
+                    $("#BtnToggle").text("Hide");
+                }
+            });
+
+            $("#BtnToggle").click(function () {
+                if (confirm("Are you sure..??")) {
+                    $("#MyDiv").toggle(5000);
+                    ($(this).text() == "Hide")
+                        ? ($(this).text("Show"), $("#BtnHide").attr("disabled", true), $("#BtnShow").attr("disabled", false))
+                        : ($(this).text("Hide"), $("#BtnHide").attr("disabled", false), $("#BtnShow").attr("disabled", true))
+                }
+            });
+
+            $("#BtnPlus").click(function () {
+                var MDH = parseInt($("#MyDiv").css("height"));
+                if (MDH <= 400) {
+                    MDH += 10;
+                    $("#MyDiv").css("height", MDH);
+                    $("#MyDiv").css("width", MDH);
+                }
+                else {
+                    alert("More than 400px is not possible.");
+                }
+            });
+
+            $("#BtnMinus").click(function () {
+                var MDH = parseInt($("#MyDiv").css("height"));
+                if (MDH >= 30) {
+                    MDH -= 10;
+                    $("#MyDiv").css("height", MDH);
+                    $("#MyDiv").css("width", MDH);
+                }
+                else {
+                    alert("Less than 30px is not possible.");
+                }
+            });
+        });
+
+    </script>
+    <style type="text/css">
+        .fullscreen_bg {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+            background-size: cover;
+        }
+
+        .fullscreen_bg_video {
+            position: fixed;
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+
+
+
+
+
+        }
+
+        nav {
+            display: flex;
+
+            margin: auto;
+            padding: 20px 0px;
+            align-items: center;
+            justify-content: space-between;
+
+
+        }
+
+        nav ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: white;
+        }
+
+        .detail h1 {
+            font-size: 50px;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        span {
+            color: rgb(12, 12, 11);
+        }
+
+        .detail p {
+            color: rgb(9, 7, 12);
+            line-height: 22px;
+        }
+
+        .detail a {
+            background: black;
+            padding: 10px 18px;
+            text-decoration: none;
+            font-weight: bold;
+            color: aliceblue;
+            display: inline-block;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+
+        .images {
+            width: 50%;
+            height: 80%;
+            position: absolute;
+            bottom: 0;
+            right: 100px;
+
+
+
+        }
+
+        .imges-responsive:hover {
+            opacity: 60%;
+        }
+
+
+
+
+        .images img {
+            height: 100%;
+            position: absolute;
+            left: 80%;
+            bottom: 0;
+            transform: translate(-50%);
+            transition: bottom 1s, left 1s;
+        }
+
+        .images:hover.shape {
+            bottom: 40px;
+        }
+
+        .image:hover.boy {
+            left: 45%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="MyDiv">
+        <div class="fullscreen_bg">
+            <video autoplay muted loop class="fullscreen_bg_video">
+                <source src="nature_-_92718 (540p).mp4">
+            </video>
+        </div>
+        <div class="hero">
+            <nav>
+                <img src="lion1.jpg" height="120px" width="120px" style="border-radius: 50%; right:20%;" alt="">
+
+                <ul>
+                    <li><a href="#"></i>home</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">contact</a></li>
+                    <li><a href="#">web</a></li>
+                    <li><a href="#">services</a></li>
+                </ul>
+            </nav>
+            <div class="detail">
+                <H1>LION</H1>
+                <p><b>In the 19th century, the rulers of Indian princely states used to invite the British colonists<BR>
+                        for
+                        hunting expeditions.
+                        At the end of the 19th century,only about a dozen Asiatic lions <BR>were left in India, all of
+                        them
+                        in
+                        the
+                        Gir Forest,
+                        which was part of the Nawab of Junagarh's <BR>private hunting grounds. British viceroys brought
+                        the
+                        drastic
+                        decline of the
+                        lion population <BR>in Gir to the attention of the Nawab of Junagadh, who established the
+                        sanctuary.
+                        Today,
+                        it <BR>is the only
+                        area in Asia where Asiatic lions occur and is considered one of the most <BR>important protected
+                        areas
+                        in
+                        Asia because of
+                        its biodiversity. The Gir ecosystem with its<BR> diverse flora and fauna is protected as a
+                        result of
+                        the
+                        efforts of the
+                        government forest <BR>department, wildlife activists and NGOs. It is now considered the jewel of
+                        Gujarat's</b>
+
+
+
+                </p>
+                <a href="#">download</a>
+                <div class="images">
+                    <img src="lion - Copy.webp" class="shape">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <br>
+    <button id="BtnHide">
+        Hide
+    </button>&nbsp;&nbsp;
+    <button id="BtnShow">
+        Show
+    </button>
+
+    <button id="BtnPlus" style="font-size:small"> <b>+</b>
+    </button>
+    <button id="BtnMinus" style="font-size:small"> <b>-</b>
+    </button>
+
+</body>
+
+</html>
